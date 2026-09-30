@@ -2,14 +2,14 @@ name: Auto Music Downloader
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
-  workflow_dispatch:
+    - cron: '0 */6 * * *'  # Runs automatically every 6 hours
+  workflow_dispatch:      # Allows manual trigger from Actions tab
 
 jobs:
   fetch-and-upload:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write  # Grants permission to save uploaded_tracks.txt back to repo
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
