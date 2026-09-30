@@ -67,7 +67,7 @@ def main():
                 continue
 
             print(f"[{idx}/{len(tracks)}] Processing new track: {track}")
-            os.system(f'spotiflac download --query "{track}" --output "{TEMP_DIR}"')
+            os.system(f'spotiflac "{track}" --output-path "{TEMP_DIR}"')
 
             flac_files = glob.glob(f"{TEMP_DIR}/*.flac")
             if not flac_files:
